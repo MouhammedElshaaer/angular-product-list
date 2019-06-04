@@ -18,9 +18,27 @@ export class ItemComponent implements OnInit {
   @ViewChild(ItemUpdateComponent) itemUpdate: ItemUpdateComponent;
   @ViewChild(ItemDeleteComponent) itemDelete: ItemDeleteComponent;
 
+  imagePreview: string;
+
   constructor() { }
 
   ngOnInit() {
+
+    if(this.item.image){
+      
+      const reader = new FileReader();
+      reader.onload = () => {
+        /**
+         * Since reader.result may return string | ArrayBuffer, it does
+         * not implicitly cast to string to avoid data loss(truncation).
+         * So, we cast the returned value to string
+         */
+        this.imagePreview = reader.result as string;
+      };
+
+      reader.readAsDataURL(this.item.image);
+      
+    }
   }
 
   open(){

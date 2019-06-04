@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ItemComponent } from './item/item.component';
 import { ItemViewComponent } from './item-view/item-view.component';
@@ -23,7 +24,8 @@ import { ItemDeleteComponent } from './item-delete/item-delete.component';
     ItemDeleteComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ProductsModule { }

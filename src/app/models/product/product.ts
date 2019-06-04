@@ -6,7 +6,7 @@ export class Product {
     constructor(
         public name: string,
         public sku: string=null,
-        public image: string=null,
+        public image: File=null,
         public categories: string[]=null,
         public price: number=null,
         public date: string=null){

@@ -4,6 +4,10 @@
     item works! - {{item.name}}
   </p>
 
+  <div style="outline: 1px solid red; width: 200px; height: 200px;">
+    <img *ngIf="imagePreview" [src]="imagePreview" style="width: 100%; height: 100%;">
+  </div>
+
   <button (click)="open()">open</button>
   <item-view [item]="item" #ItemViewComponent></item-view>
 
