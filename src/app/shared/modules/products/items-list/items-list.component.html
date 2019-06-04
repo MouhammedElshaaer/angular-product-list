@@ -1,3 +1,15 @@
 <p>
   items-list works!
 </p>
+
+<div style="background: gray; padding: 10px;" id="items-container">
+
+  <item *ngFor="let item of items"
+        [item]="item">
+  </item>
+
+</div>
+
+<!-- <item-view *ngFor="let item of items"
+      [item]="item">
+</item-view> -->

@@ -4,12 +4,12 @@ export class Product {
     public id:number;
     
     constructor(
-        public sku: string,
         public name: string,
-        public image: string,
-        public categories: string[],
-        public price: number,
-        public date: string,){
+        public sku: string=null,
+        public image: string=null,
+        public categories: string[]=null,
+        public price: number=null,
+        public date: string=null){
             this.id = ++Product.prev_id;
         }
   }

@@ -1,3 +1,11 @@
-<p>
-  item works!
-</p>
+<div style="background: blue" class="item">
+
+  <p>
+    item works! - {{item.name}}
+  </p>
+
+  <button (click)="open()">open {{item.name}}</button>
+
+  <item-view [item]="item" #ItemViewComponent></item-view>
+
+</div>
