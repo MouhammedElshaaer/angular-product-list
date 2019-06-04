@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { ProductsService } from './../../../services/products.service';
+
 import { ItemAddComponent } from './../item-add/item-add.component';
 
 import { Product } from './../../../../models/product/product';
 
-import { MOCK_PRODUCTS } from './../../../../models/product/products-mockup';
 
 @Component({
   selector: 'app-items-list',
@@ -17,11 +18,19 @@ export class ItemsListComponent implements OnInit {
 
   items: Product[];
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    this.items = MOCK_PRODUCTS;
+
+    this.items = this.productsService.getProducts();
+    this.productsService.allProducts$.subscribe(
+      products=>{
+        this.items=products;
+      }
+    );
+    
     console.log(this.items);
+    
   }
 
   open(){
