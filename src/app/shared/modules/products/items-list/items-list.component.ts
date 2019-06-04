@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { ItemAddComponent } from './../item-add/item-add.component';
 
 import { Product } from './../../../../models/product/product';
 
@@ -11,6 +13,8 @@ import { MOCK_PRODUCTS } from './../../../../models/product/products-mockup';
 })
 export class ItemsListComponent implements OnInit {
 
+  @ViewChild(ItemAddComponent) itemAdd: ItemAddComponent;
+
   items: Product[];
 
   constructor() { }
@@ -19,5 +23,10 @@ export class ItemsListComponent implements OnInit {
     this.items = MOCK_PRODUCTS;
     console.log(this.items);
   }
+
+  open(){
+    this.itemAdd.show();
+  }
+
 
 }

@@ -4,8 +4,13 @@
     item works! - {{item.name}}
   </p>
 
-  <button (click)="open()">open {{item.name}}</button>
-
+  <button (click)="open()">open</button>
   <item-view [item]="item" #ItemViewComponent></item-view>
+
+  <button (click)="update()">update</button>
+  <item-update [item]="item" #ItemUpdateComponent></item-update>
+  
+  <button (click)="delete()">Delete</button>
+  <item-delete [item]="item" #ItemDeleteComponent></item-delete>
 
 </div>

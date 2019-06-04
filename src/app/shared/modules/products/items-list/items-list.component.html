@@ -1,6 +1,7 @@
-<p>
-  items-list works!
-</p>
+
+<button (click)="open()">Add Product</button>
+
+<item-add #ItemAddComponent></item-add>
 
 <div style="background: gray; padding: 10px;" id="items-container">
 
@@ -9,7 +10,3 @@
   </item>
 
 </div>
-
-<!-- <item-view *ngFor="let item of items"
-      [item]="item">
-</item-view> -->

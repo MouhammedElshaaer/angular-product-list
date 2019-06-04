@@ -1,0 +1,22 @@
+
+<!-- The Modal -->
+<div id="myModal" display class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="close()">&times;</span>
+      <h2>Delete product {{item.name}}</h2>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+      <button (click)="delete()">Confirm</button>
+      <button (click)="close()">Cancel</button>
+    </div>
+  </div>
+
+</div>
