@@ -18,17 +18,21 @@ export class ItemsListComponent implements OnInit {
 
   items: Product[];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {
+
+    //Track items array changes using angular data streams
+    this.productsService.allProducts$.subscribe(
+      products=>{
+        this.items=products;
+        console.log(this.items);
+      }
+    );
+
+  }
 
   ngOnInit() {
 
     this.items = this.productsService.getProducts();
-    this.productsService.allProducts$.subscribe(
-      products=>{
-        this.items=products;
-      }
-    );
-    
     console.log(this.items);
     
   }

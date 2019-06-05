@@ -9,11 +9,26 @@
       <h2>Update product {{item.name}}</h2>
     </div>
     <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
+        <div>
+          <input type="text" [(ngModel)]="item.name" name="product_name" placeholder="product name">
+          <input type="text" [(ngModel)]="item.price" name="price" placeholder="price">
+          <input type="file" (change)="setImage($event)" name="image" value="Upload Image">
+        </div>
+  
+        <div>
+          <label>Product Category:</label>
+          <div *ngFor="let category of categories">
+            <input  type="checkbox"
+                    id="{{category}}"
+                    name="{{category}}"
+                    (change)="addCategory(category, $event)"
+                    [selectControl]="selected(category)">
+            <label for="{{category}}">{{category}}</label>
+          </div>
+        </div>
+    
     </div>
     <div class="modal-footer">
-      <h3>Modal Footer</h3>
       <button (click)="update()">Update</button>
     </div>
   </div>

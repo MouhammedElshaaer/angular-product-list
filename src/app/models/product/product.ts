@@ -9,7 +9,7 @@ export class Product {
         public image: File=null,
         public categories: string[]=null,
         public price: number=null,
-        public date: string=null){
+        public date: number=null){
             this.id = ++Product.prev_id;
         }
   }

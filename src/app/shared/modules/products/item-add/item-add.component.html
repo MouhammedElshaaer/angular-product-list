@@ -13,13 +13,17 @@
       <div>
         <input type="text" [(ngModel)]="newItem.name" name="product_name" placeholder="product name">
         <input type="text" [(ngModel)]="newItem.price" name="price" placeholder="price">
-        <input type="file" (change)="setImage($event)" name="image" value="Upload Image">
+        <input type="file" [(ngModel)]="itemImageName" (change)="setImage($event)" name="image" value="Upload Image">
       </div>
 
       <div>
         <label>Product Category:</label>
-        <div *ngFor="let category of categories">
-          <input type="checkbox" (change)="addCategory(category, $event.target.checked)" name="{{category}}" id="{{category}}">
+        <div *ngFor="let category of categories; let i = index">
+          <input  type="checkbox"
+                  (change)="addCategory(category, $event)"
+                  name="{{category}}"
+                  id="{{category}}"
+                  #categoryCheckboxes>
           <label for="{{category}}">{{category}}</label>
         </div>
       </div>

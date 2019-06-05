@@ -14,18 +14,19 @@ import { Product } from './../../../../models/product/product';
 export class ItemComponent implements OnInit {
 
   @Input() item: Product;
+  @Input() items: Product[];
   @ViewChild(ItemViewComponent) itemView: ItemViewComponent;
   @ViewChild(ItemUpdateComponent) itemUpdate: ItemUpdateComponent;
   @ViewChild(ItemDeleteComponent) itemDelete: ItemDeleteComponent;
 
   imagePreview: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
 
     if(this.item.image){
-      
+
       const reader = new FileReader();
       reader.onload = () => {
         /**

@@ -4,7 +4,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 20px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -61,7 +61,26 @@
     color: white;
   }
   
-  .modal-body {padding: 2px 16px;}
+  .modal-body {
+    padding: 2px 16px;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    
+    div :nth-child(1){
+      grid-column: 1 / span 1;
+    }
+
+    div :nth-child(2){
+      grid-column: 2 / span 1;
+    }
+
+    input[type='checkbox']{
+      position: relative;
+      top: 2px;
+    }
+
+  }
   
   .modal-footer {
     padding: 2px 16px;

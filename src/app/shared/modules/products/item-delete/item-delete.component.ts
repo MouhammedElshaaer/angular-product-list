@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
-import { DisplayDirective } from 'src/app/shared/directives/display.directive';
+import { DisplayDirective } from 'src/app/shared/directives/display/display.directive';
 
 import { Product } from 'src/app/models/product/product';
 

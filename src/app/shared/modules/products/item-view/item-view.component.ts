@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 import { Product } from './../../../../models/product/product';
 
-import { DisplayDirective } from 'src/app/shared/directives/display.directive';
+import { DisplayDirective } from 'src/app/shared/directives/display/display.directive';
 
 @Component({
   selector: 'item-view',
