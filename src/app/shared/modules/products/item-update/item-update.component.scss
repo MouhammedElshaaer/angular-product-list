@@ -1,34 +1,147 @@
 
+/******************************************************************************************************/
+/******************************************** Base layout *********************************************/
+/******************************************************************************************************/
+
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 20px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 15vh 1fr 45vh;
+
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 20px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content */
+.modal-content {
+  grid-row: 2 / span 1;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15vh 1fr 10vh;
+
+  margin: 0px 10px;
+  
+  position: relative;
+  background-color: #fefefe;
+  padding: 10px;
+  border: 1px solid #888;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+
+  .modal-header {
+    grid-row: 1 / span 1;
+
+    padding: 2px 16px;
+    border-radius: 10px 10px 0 0;
+    background-color: #86c232;
+    color: white;
+  }
+
+  .modal-body {
+    grid-row: 2 / span 1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+
+    padding: 10px 16px;
+
+  }
+
+  .modal-footer {
+    grid-row: 3 / span 1;
+
+    padding: 2px;
+    border-radius: 0 0 10px 10px;
+    background-color: #86c232;
+    color: white;
+  }
+
+}
+
+.group-one{
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 30px);
+  grid-row-gap: 10px;
+
+  input:not([type=file]){
+    padding: 0 3px;
+    border: 0px;
+    border-bottom: 1px solid #86c232;
   }
   
-  /* Modal Content */
-  .modal-content {
+  input:not([type=file]):hover{
+    border-bottom: 2px solid #86c232;
+  }
+
+  input:not([type=file]):focus{
+    border-bottom: 2px solid #86c232;
+    outline: 0;
+  }
+
+  input:focus{
+    outline: 0;
+  }
+  
+
+  input :nth-child(1){
+    grid-row: 1 / span 1;
+  }
+  input :nth-child(2){
+    grid-row: 2 / span 1;
+  }
+  input :nth-child(3){
+    grid-row: 3 / span 1;
+  }
+
+}
+
+.group-two{
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+
+  input{
     position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+    top: 2px;
   }
+
+  input:hover{
+    box-shadow: 0 0 5px 4px #86c232;
+  }
+}
+
+.update-button{
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #86c232;
+}
   
+.update-button:hover{
+  background: #86c232;
+  color: #fff;
+}
+
   /* Add Animation */
   @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
@@ -54,36 +167,54 @@
     text-decoration: none;
     cursor: pointer;
   }
+
   
-  .modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+  /******************************************************************************************************/
+  /******************************************* Media Queries ********************************************/
+  /******************************************************************************************************/
+  @media only screen and (min-width: 476px) {
+
+    .modal-body {
+      grid-row: 2 / span 1;
+  
+      // display: grid;
+
+      grid-template-columns: 3fr 2fr;
+      grid-column-gap: 30px;
+  
+      padding: 10px 16px;
+
+      .group-one{
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      .group-two{
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+      }
+  
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .modal-content {
+      margin: 0px 100px;
+    }
   }
   
-  .modal-body {
-    padding: 2px 16px;
-
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    
-    div :nth-child(1){
-      grid-column: 1 / span 1;
-    }
-
-    div :nth-child(2){
-      grid-column: 2 / span 1;
-    }
-
-    input[type='checkbox']{
-      position: relative;
-      top: 2px;
+  @media only screen and (min-width: 1024px) {
+    .modal-content {
+      margin: 0px 200px;
     }
 
   }
   
-  .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+  @media only screen and (min-width: 1124px) {
+    .modal-content {
+      margin: auto;
+      width: 60%;
+    }
+
   }
+  

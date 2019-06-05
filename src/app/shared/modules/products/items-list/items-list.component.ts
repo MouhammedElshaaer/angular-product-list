@@ -7,6 +7,11 @@ import { ItemAddComponent } from './../item-add/item-add.component';
 import { Product } from './../../../../models/product/product';
 
 
+//Fontawesome
+import {
+  faPlus
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-items-list',
   templateUrl: './items-list.component.html',
@@ -17,6 +22,7 @@ export class ItemsListComponent implements OnInit {
   @ViewChild(ItemAddComponent) itemAdd: ItemAddComponent;
 
   items: Product[];
+  faPlus = faPlus;
 
   constructor(private productsService: ProductsService) {
 

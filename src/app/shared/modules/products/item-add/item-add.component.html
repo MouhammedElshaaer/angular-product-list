@@ -10,13 +10,13 @@
     </div>
     <div class="modal-body">
       
-      <div>
+      <div class="group-one">
         <input type="text" [(ngModel)]="newItem.name" name="product_name" placeholder="product name">
         <input type="text" [(ngModel)]="newItem.price" name="price" placeholder="price">
         <input type="file" [(ngModel)]="itemImageName" (change)="setImage($event)" name="image" value="Upload Image">
       </div>
 
-      <div>
+      <div class="group-two">
         <label>Product Category:</label>
         <div *ngFor="let category of categories; let i = index">
           <input  type="checkbox"
@@ -30,7 +30,7 @@
 
     </div>
     <div class="modal-footer">
-      <button (click)="add()">Add</button>
+      <button class="add-button" (click)="add()">Add</button>
     </div>
   </div>
 

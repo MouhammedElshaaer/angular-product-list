@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { ItemComponent } from './item/item.component';
 import { ItemViewComponent } from './item-view/item-view.component';
 import { ItemsListComponent } from './items-list/items-list.component';
@@ -27,7 +29,8 @@ import { ItemDeleteComponent } from './item-delete/item-delete.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class ProductsModule { }

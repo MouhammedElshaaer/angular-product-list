@@ -1,11 +1,11 @@
 
-<button (click)="open()">Add Product</button>
+<span (click)="open()"><fa-icon [icon]="faPlus"></fa-icon></span>
 
 <item-add #ItemAddComponent
           [items]="items">
 </item-add>
 
-<div style="background: gray; padding: 10px;" id="items-container">
+<div id="items-container">
 
   <item *ngFor="let item of items"
         [item]="item"

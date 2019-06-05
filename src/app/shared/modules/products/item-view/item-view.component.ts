@@ -14,13 +14,28 @@ export class ItemViewComponent implements OnInit {
   @Input() item: Product;
   @ViewChild(DisplayDirective) displayControl:DisplayDirective;
 
+  imagePreview: string;
   displayed: boolean;
 
   constructor() { }
 
   ngOnInit() {
 
-    this.displayed = true;
+    if(this.item.image){
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        /**
+         * Since reader.result may return string | ArrayBuffer, it does
+         * not implicitly cast to string to avoid data loss(truncation).
+         * So, we cast the returned value to string
+         */
+        this.imagePreview = reader.result as string;
+      };
+
+      reader.readAsDataURL(this.item.image);
+      
+    }
 
   }
 

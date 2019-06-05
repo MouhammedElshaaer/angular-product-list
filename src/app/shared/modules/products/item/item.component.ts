@@ -6,6 +6,13 @@ import { ItemViewComponent } from './../item-view/item-view.component';
 
 import { Product } from './../../../../models/product/product';
 
+//Fontawesome
+import {
+  faTrash,
+  faEdit,
+  faEye
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'item',
   templateUrl: './item.component.html',
@@ -20,7 +27,10 @@ export class ItemComponent implements OnInit {
   @ViewChild(ItemDeleteComponent) itemDelete: ItemDeleteComponent;
 
   imagePreview: string;
-
+  faTrash = faTrash;
+  faEdit = faEdit;
+  faEye = faEye;
+  
   constructor() {}
 
   ngOnInit() {

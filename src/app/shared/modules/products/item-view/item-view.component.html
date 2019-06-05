@@ -9,11 +9,18 @@
       <h2>{{item.name}}</h2>
     </div>
     <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
+      <div style="width: 100%; height: 100%;">
+        <img *ngIf="imagePreview" [src]="imagePreview" style="width: 100%; height: 100%;">
+      </div>
     </div>
     <div class="modal-footer">
-      <h3>Modal Footer</h3>
+      <p>PRICE: {{item.price}} LE</p>
+      <div class="categories">
+        <p>CATEGORIES:</p>
+        <ul>
+          <li *ngFor="let cat of item.categories">{{cat}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 

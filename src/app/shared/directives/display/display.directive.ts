@@ -12,7 +12,7 @@ export class DisplayDirective {
   }
 
   show(){
-    this.el.nativeElement.style.display='block';
+    this.el.nativeElement.style.display='grid';
   }
 
 }
