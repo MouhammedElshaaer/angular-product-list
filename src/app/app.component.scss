@@ -1,0 +1,8 @@
+div{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    max-height: 600px;
+    overflow-y: scroll;
+    // padding-top: 50px;
+}

@@ -9,6 +9,22 @@
     }
 }
 
+.search-item{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    margin-bottom: 20px;
+
+    input[name="item_search"]{
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 2px 2px black inset;
+        border: 0px;
+        outline: 0px;
+    }
+}
+    
 
 fa-icon{
     position: fixed;

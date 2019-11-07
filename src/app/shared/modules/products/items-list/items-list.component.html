@@ -1,15 +1,19 @@
 
 <span (click)="open()"><fa-icon [icon]="faPlus"></fa-icon></span>
 
+<div class="search-item">
+  <input type="text" #itemSearch [(ngModel)]="itemName" (input)="filter(itemSearch.value)" name="item_search" id="item-search" placeholder="Search...">
+</div>
+
 <item-add #ItemAddComponent
           [items]="items">
 </item-add>
 
 <div id="items-container">
 
-  <item *ngFor="let item of items"
+  <item *ngFor="let item of filteredItems"
         [item]="item"
-        [items]="items">
+        [items]="filteredItems">
   </item>
 
 </div>

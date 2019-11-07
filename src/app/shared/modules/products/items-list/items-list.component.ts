@@ -22,6 +22,7 @@ export class ItemsListComponent implements OnInit {
   @ViewChild(ItemAddComponent) itemAdd: ItemAddComponent;
 
   items: Product[];
+  filteredItems: Product[];
   faPlus = faPlus;
 
   constructor(private productsService: ProductsService) {
@@ -30,6 +31,7 @@ export class ItemsListComponent implements OnInit {
     this.productsService.allProducts$.subscribe(
       products=>{
         this.items=products;
+        this.filteredItems = Object.assign([], this.items);
         console.log(this.items);
       }
     );
@@ -39,12 +41,25 @@ export class ItemsListComponent implements OnInit {
   ngOnInit() {
 
     this.items = this.productsService.getProducts();
+    this.filteredItems = Object.assign([], this.items);
     console.log(this.items);
     
   }
 
   open(){
     this.itemAdd.show();
+  }
+
+  filter(itemName: string){
+    
+    if(!itemName){
+      this.filteredItems = Object.assign([], this.items);
+    }else{
+      
+      this.filteredItems = Object.assign([], this.items)
+                                  .filter( item => item.name.toLowerCase().indexOf(itemName.toLowerCase())> -1);
+      console.log(this.filteredItems);
+    }
   }
 
 
